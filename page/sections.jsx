@@ -27,7 +27,7 @@ window.PAGE_ASSETS = window.PAGE_ASSETS || {
   fgHeroLogo2: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/hero-logo-2.svg",
   fgHeroLogo3: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/hero-logo-3.svg",
   // Figma assets (Hook — node 1:398)
-  fgHookBg: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/hook-bg-image.webp?v=" + Date.now(),
+  fgHookBg: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@49ad896/hook-bg-image.webp?v=" + Date.now(),
   // Figma assets (Insight — node 1:426)
   fgInsightModel: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/insight-model.webp",
   fgInsightEllipse48: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/insight-ellipse-48.svg",
