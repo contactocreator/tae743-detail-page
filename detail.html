@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TAE743 — Skin Vitality Gamtae Exosome Cream</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  :root {
+    --bg: #F2EEE7;
+    --paper: #FAF7F1;
+    --ink: #14160F;
+    --ink-2: #3F4538;
+    --ink-3: #7A8074;
+    --line: #E2DDD2;
+    --line-2: #CFC9BB;
+    --green: #2D4739;
+    --green-deep: #1A2E22;
+    --green-soft: #6B8576;
+    --green-pale: #C8D4C5;
+    --moss: #4A7A5C;
+    --moss-pale: #A8C9B5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  img { display: block; max-width: 100%; }
+  html, body {
+    background: #1A1A18;
+    color: var(--ink);
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+  }
+  .mono { font-family: 'IBM Plex Mono', 'Courier New', monospace; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  .fade-in { animation: fadeIn 0.5s ease-out; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* SVG line drawing animation — 그리기(천천히) + 유지 + 되감기(빠르게) 무한 롤링
+     좌/우 그래프 모두 60% 시점에 동시에 완성, 80~100% 구간에서 빠르게 되감기 */
+  @keyframes drawLine {
+    0%   { stroke-dashoffset: var(--len, 2000); }
+    60%  { stroke-dashoffset: 0; }              /* 그리기 끝 (둘 다 동일 시점) */
+    80%  { stroke-dashoffset: 0; }              /* 1초간 유지 */
+    100% { stroke-dashoffset: var(--len, 2000); } /* 빠르게 되감기 */
+  }
+  .anim-draw {
+    stroke-dasharray: var(--len, 2000);
+    stroke-dashoffset: var(--len, 2000);
+    animation: drawLine 5.25s ease-in-out infinite;
+  }
+  /* Dot pulse — 라인이 끝점에 도달하는 시점에 나타나고 되감기 시작 시 사라짐 */
+  @keyframes dotPulse {
+    0%, 55% { opacity: 0; transform: scale(0.5); }
+    60%     { opacity: 1; transform: scale(1.3); }
+    65%     { opacity: 1; transform: scale(1); }
+    80%     { opacity: 1; transform: scale(1); }
+    100%    { opacity: 0; transform: scale(0.5); }
+  }
+  .anim-dot {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: dotPulse 5.25s ease-in-out infinite;
+  }
+
+  /* NON-EXOSOME — 표피 위에서 띡띡 튕김 (각질층 못 뚫고 겉돔) */
+  @keyframes nonExosomeBounce {
+    0%, 19%    { top: 24%; }
+    20%, 39%   { top: 18%; }
+    40%, 59%   { top: 22%; }
+    60%, 79%   { top: 14%; }
+    80%, 100%  { top: 20%; }
+  }
+
+  /* TAE743 EXOSOME — 단계별 띡띡 침투 (표피→각질층→표피하부→진피) */
+  @keyframes exosomeFall {
+    0%, 4%     { top: -3%; opacity: 0; }
+    5%, 14%    { top: 0%; opacity: 1; }
+    15%, 30%   { top: 24%; opacity: 1; }
+    31%, 46%   { top: 35%; opacity: 1; }
+    47%, 62%   { top: 47%; opacity: 1; }
+    63%, 80%   { top: 65%; opacity: 1; }
+    81%, 94%   { top: 78%; opacity: 1; }
+    95%, 99%   { top: 85%; opacity: 0; }
+    100%       { top: -3%; opacity: 0; }
+  }
+
+  /* Page frame: Figma 디자인 1:1 = 1000px 고정 */
+  .page-frame {
+    width: 1000px;
+    margin: 0 auto;
+    background: var(--paper);
+    box-shadow: 0 0 60px rgba(0,0,0,0.18);
+    overflow: hidden;
+    position: relative;
+  }
+  .annotation-frame {
+    width: 1380px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1000px 1fr;
+    gap: 24px;
+    background: transparent;
+  }
+
+  /* Section base */
+  .sec { padding: 80px 28px; position: relative; }
+  .sec--narrow { padding: 64px 28px; }
+  .sec--full { padding: 0; }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--green);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .h-display {
+    font-size: 32px;
+    line-height: 1.18;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .h-section {
+    font-size: 26px;
+    line-height: 1.22;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+  }
+  .body {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--ink-2);
+  }
+  .body-sm {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+  .accent { color: var(--green); }
+  .accent-strong { color: var(--green); font-weight: 700; }
+
+  /* Annotation column */
+  .anno-col { padding: 80px 0 80px 0; }
+  .anno-card {
+    background: rgba(250, 247, 241, 0.04);
+    border: 1px solid rgba(250, 247, 241, 0.12);
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    color: rgba(250, 247, 241, 0.88);
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .anno-card .anno-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    color: var(--moss-pale);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .anno-card strong { color: var(--paper); font-weight: 600; }
+  .anno-section-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.2em;
+    color: rgba(250, 247, 241, 0.5);
+    margin-top: 28px;
+    margin-bottom: 10px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(250, 247, 241, 0.12);
+  }
+  .anno-section-tag:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  // 캐시 무효화: jsx 파일 매 로드마다 새로 받아오도록 ?v= 쿼리 추가
+  (function () {
+    var v = '?v=' + Date.now();
+    var files = ['page/sections.jsx', 'page/sections2.jsx', 'page/annotations.jsx', 'page/page_app.jsx'];
+    files.forEach(function (f) {
+      var s = document.createElement('script');
+      s.type = 'text/babel';
+      s.src = f + v;
+      document.body.appendChild(s);
+    });
+  })();
+</script>
+</body>
+</html>

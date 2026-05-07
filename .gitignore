@@ -1,0 +1,7 @@
+_backup_*/
+scraps/
+uploads/
+gifs/
+.DS_Store
+.claude/
+.omc/

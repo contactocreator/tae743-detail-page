@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TAE743 상세페이지 기획안 — 만성 홍조 케어 전략</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  :root {
+    --bg: #F5F1EC;
+    --paper: #FAF7F4;
+    --ink: #1A1817;
+    --ink-2: #4A4541;
+    --ink-3: #8A847E;
+    --line: #E5DFD6;
+    --line-2: #D6CFC2;
+    --accent: #2D4739;
+    --accent-soft: #6B8576;
+    --rose: #4A7A5C;
+    --rose-soft: #A8C9B5;
+    --warn: #5C8B6F;
+    --postit: #E8EDE6;
+    --postit-line: #B8C7B0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .serif { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; font-weight: 600; letter-spacing: -0.025em; }
+  .serif em, em { font-style: normal; font-weight: 700; font-family: inherit; }
+  .mono { font-family: 'IBM Plex Mono', 'Courier New', monospace; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  .fade-in { animation: fadeIn 0.4s ease-out; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="components/topbar.jsx"></script>
+<script type="text/babel" src="components/persona.jsx"></script>
+<script type="text/babel" src="components/strategy.jsx"></script>
+<script type="text/babel" src="components/comparison.jsx"></script>
+<script type="text/babel" src="components/clinical.jsx"></script>
+<script type="text/babel" src="components/ingredient.jsx"></script>
+<script type="text/babel" src="components/copy_options.jsx"></script>
+<script type="text/babel" src="components/action_items.jsx"></script>
+<script type="text/babel" src="components/annotation.jsx"></script>
+<script type="text/babel" src="components/tweaks.jsx"></script>
+<script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
