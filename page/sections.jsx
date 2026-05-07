@@ -37,7 +37,7 @@ window.PAGE_ASSETS = window.PAGE_ASSETS || {
   // Figma assets (Reviews — node 1:530)
   fgReview1a: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/review-1a.webp?v=" + Date.now(),
   fgReview1b: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/review-1b.webp",
-  fgReview2: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/review-2.webp",
+  fgReview2: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@872800b/review-2.webp",
   fgReview3: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/review-3.webp",
   fgReview4: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/review-4.webp",
   fgReview5: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/review-5.webp",
