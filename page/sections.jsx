@@ -22,6 +22,7 @@ window.PAGE_ASSETS = window.PAGE_ASSETS || {
   fgHeroPolygon2: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/hero-polygon-2.svg",
   fgHeroPolygon3: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/hero-polygon-3.svg",
   fgHeroUnion: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/hero-union.svg",
+  fgHeroRibbon: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/hero-ribbon-medal.png",
   fgHeroLogo1: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/hero-logo-1.svg",
   fgHeroLogo2: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/hero-logo-2.svg",
   fgHeroLogo3: "https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/hero-logo-3.svg",
@@ -191,21 +192,9 @@ const HeroSection = () => {
           </p>
         </div>
 
-        {/* 다이아몬드: 감태 특허 (offset y=210, polygon shape) */}
+        {/* 블루 리본 메달: 감태 포뮬러 original 특허 — 단일 PNG */}
         <div style={{ position: "relative", width: 211.77, height: 174.65, marginTop: 210 - 149.175 - (119.18 - 149.175) - 149.175 + 30 }}>
-          <img src={DETAIL_ASSETS.fgHeroUnion} alt="" style={{ position: "absolute", top: 38.76, left: 28.56, width: 155.024, height: 174.648, display: "block" }} />
-          <p style={{ position: "absolute", top: 52.5, left: 0, width: 211.77, margin: 0, fontSize: 25.594, fontWeight: 700, color: "#50a9cf", textAlign: "center", lineHeight: "33.431px", letterSpacing: "-0.6851px" }}>
-            감태
-          </p>
-          <p style={{ position: "absolute", top: 92.5, left: 0, width: 211.77, margin: 0, fontSize: 22.265, fontWeight: 700, color: "#FFFFFF", textAlign: "center", lineHeight: "27.163px", letterSpacing: "-0.5566px" }}>
-            original
-          </p>
-          <p style={{ position: "absolute", top: 117.73, left: 0, width: 211.77, margin: 0, fontSize: 25.594, fontWeight: 700, color: "#50a9cf", textAlign: "center", lineHeight: "42.834px", letterSpacing: "-0.8777px" }}>
-            특허
-          </p>
-          <p style={{ position: "absolute", top: 148.44, left: 0, width: 211.77, margin: 0, fontSize: 7.808, fontWeight: 700, color: "#50a9cf", textAlign: "center", lineHeight: "13.068px", letterSpacing: "-0.2678px" }}>
-            바이오사
-          </p>
+          <img src={DETAIL_ASSETS.fgHeroRibbon} alt="감태 포뮬러 original 특허" style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} />
         </div>
       </div>
 
