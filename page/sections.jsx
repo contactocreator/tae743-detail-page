@@ -192,8 +192,8 @@ const HeroSection = () => {
           </p>
         </div>
 
-        {/* 블루 리본 메달: 감태 포뮬러 original 특허 — 단일 PNG */}
-        <div style={{ position: "relative", width: 211.77, height: 174.65, marginTop: 210 - 149.175 - (119.18 - 149.175) - 149.175 + 30 }}>
+        {/* 블루 리본 메달: 감태 포뮬러 original 특허 — 단일 PNG (20% 확대, -20px) */}
+        <div style={{ position: "relative", width: 254.124, height: 209.58, marginTop: 210 - 149.175 - (119.18 - 149.175) - 149.175 + 30 - 20, marginLeft: -(254.124 - 211.77) / 2 }}>
           <img src={DETAIL_ASSETS.fgHeroRibbon} alt="감태 포뮬러 original 특허" style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} />
         </div>
       </div>
