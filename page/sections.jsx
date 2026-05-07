@@ -162,8 +162,23 @@ const HeroSection = () => {
           transition: "all 1s ease-out 0.2s",
         }}
       >
-        {/* 배지 1: 피부 임상 (offset y=0) */}
+        {/* 배지 0: 면세점 (인천 공항 입점 완료) — 신규 */}
         <div style={{ position: "relative", width: 149.175, height: 149.175, marginLeft: 31 }}>
+          <img src={DETAIL_ASSETS.fgHeroEllipse52} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", display: "block" }} />
+          <img src={DETAIL_ASSETS.fgHeroEllipse53} alt="" style={{ position: "absolute", top: 5.85, left: 5.85, width: 137.475, height: 137.475, display: "block" }} />
+          <p style={{ position: "absolute", top: 33.64, left: 0, width: 149.175, margin: 0, fontSize: 14.625, fontWeight: 700, color: "#1c5552", textAlign: "center", lineHeight: "23.809px", letterSpacing: "-0.4879px" }}>
+            인천 공항
+          </p>
+          <p style={{ position: "absolute", top: 54.11, left: 0, width: 149.175, margin: 0, fontSize: 31.604, fontWeight: 700, color: "#1c5552", textAlign: "center", lineHeight: "38.557px", letterSpacing: "-0.7901px" }}>
+            면세점
+          </p>
+          <p style={{ position: "absolute", top: 89.94, left: 0, width: 149.175, margin: 0, fontSize: 14.625, fontWeight: 700, color: "#1c5552", textAlign: "center", lineHeight: "23.809px", letterSpacing: "-0.4879px" }}>
+            입점 완료
+          </p>
+        </div>
+
+        {/* 배지 1: 피부 임상 (offset y=119.18) */}
+        <div style={{ position: "relative", width: 149.175, height: 149.175, marginLeft: 31, marginTop: 119.18 - 149.175 }}>
           <img src={DETAIL_ASSETS.fgHeroEllipse52} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", display: "block" }} />
           <img src={DETAIL_ASSETS.fgHeroEllipse53} alt="" style={{ position: "absolute", top: 5.85, left: 5.85, width: 137.475, height: 137.475, display: "block" }} />
           <p style={{ position: "absolute", top: 33.64, left: 0, width: 149.175, margin: 0, fontSize: 14.625, fontWeight: 700, color: "#1c5552", textAlign: "center", lineHeight: "23.809px", letterSpacing: "-0.4879px" }}>
@@ -193,7 +208,7 @@ const HeroSection = () => {
         </div>
 
         {/* 블루 리본 메달: 감태 포뮬러 original 특허 — 단일 PNG (20% 확대, -20px) */}
-        <div style={{ position: "relative", width: 254.124, height: 209.58, marginTop: 210 - 149.175 - (119.18 - 149.175) - 149.175 + 30 - 20, marginLeft: -(254.124 - 211.77) / 2 }}>
+        <div style={{ position: "relative", width: 254.124, height: 209.58, marginTop: 210 - 149.175 - (119.18 - 149.175) - 149.175 + 30 - 40, marginLeft: -(254.124 - 211.77) / 2 }}>
           <img src={DETAIL_ASSETS.fgHeroRibbon} alt="감태 포뮬러 original 특허" style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} />
         </div>
       </div>
