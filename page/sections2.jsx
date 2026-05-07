@@ -513,7 +513,7 @@ const Clinical02Section = () => {
       </div>
 
       {/* 3개 카드 */}
-      <img src="https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/clinical02.gif" alt="clinical02-bars" style={{ width: "100%", height: "auto", display: "block" }} />
+      <img src="https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@main/clinical02.gif?v=smooth" alt="clinical02-bars" style={{ width: "100%", height: "auto", display: "block" }} />
     </section>
   );
 };
