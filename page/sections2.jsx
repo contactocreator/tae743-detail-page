@@ -331,7 +331,6 @@ const Clinical01Section = () => {
 
   return (
     <section
-      ref={ref}
       data-screen-label="06 Clinical 01"
       style={{
         position: "relative",
@@ -446,7 +445,6 @@ const Clinical02Section = () => {
 
   return (
     <section
-      ref={ref}
       data-screen-label="07 Clinical 02"
       style={{
         position: "relative",
@@ -497,7 +495,6 @@ const Clinical03Section = () => {
 
   return (
     <section
-      ref={ref}
       data-screen-label="08 Clinical 03"
       style={{
         position: "relative",
