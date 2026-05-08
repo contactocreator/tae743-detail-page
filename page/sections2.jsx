@@ -312,26 +312,8 @@ const ReviewSection = () => {
 
 const Clinical01Section = () => {
   // Figma 디자인 (1:557, 1000×2773). 무한 루프: 그리기 → 유지 → 되감기 → 반복 (5.25초 사이클).
-  const ref = React.useRef(null);
-  const [progress, setProgress] = React.useState(0);
-
-  React.useEffect(() => {
-    let raf;
-    const cycleMs = 5250;
-    const start = performance.now();
-    const easeInOut = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
-    const tick = (now) => {
-      const phase = ((now - start) % cycleMs) / cycleMs;
-      let p;
-      if (phase <= 0.6) p = easeInOut(phase / 0.6);          // 0~60%: 그리기
-      else if (phase <= 0.8) p = 1;                           // 60~80%: 유지
-      else p = 1 - easeInOut((phase - 0.8) / 0.2);            // 80~100%: 되감기
-      setProgress(p);
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, []);
+  // 정적 — 애니메이션 제거, 최종 상태로 고정
+  const progress = 1;
 
   // SVG 차트 좌표 — Figma 824×471 비율
   const W = 824;
@@ -449,26 +431,8 @@ const Stat = ({ label, value }) => (
 
 const Clinical02Section = () => {
   // Figma 디자인 (1:628, 1000×1386). 무한 루프: 그리기 → 유지 → 되감기 (5.25초 사이클).
-  const ref = React.useRef(null);
-  const [progress, setProgress] = React.useState(0);
-
-  React.useEffect(() => {
-    let raf;
-    const cycleMs = 5250;
-    const start = performance.now();
-    const easeInOut = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
-    const tick = (now) => {
-      const phase = ((now - start) % cycleMs) / cycleMs;
-      let p;
-      if (phase <= 0.6) p = easeInOut(phase / 0.6);
-      else if (phase <= 0.8) p = 1;
-      else p = 1 - easeInOut((phase - 0.8) / 0.2);
-      setProgress(p);
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, []);
+  // 정적 — 애니메이션 제거, 최종 상태로 고정
+  const progress = 1;
 
   // 임상 결과 — 카운트업/카운트다운 + 막대 동기화
   // 피부 불편감: 0% → 100%
@@ -520,26 +484,8 @@ const Clinical02Section = () => {
 
 const Clinical03Section = () => {
   // Figma 디자인 (1:666, 1000×916). 무한 루프: 그리기 → 유지 → 되감기 (5.25초 사이클).
-  const ref = React.useRef(null);
-  const [progress, setProgress] = React.useState(0);
-
-  React.useEffect(() => {
-    let raf;
-    const cycleMs = 5250;
-    const start = performance.now();
-    const easeInOut = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
-    const tick = (now) => {
-      const phase = ((now - start) % cycleMs) / cycleMs;
-      let p;
-      if (phase <= 0.6) p = easeInOut(phase / 0.6);
-      else if (phase <= 0.8) p = 1;
-      else p = 1 - easeInOut((phase - 0.8) / 0.2);
-      setProgress(p);
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, []);
+  // 정적 — 애니메이션 제거, 최종 상태로 고정
+  const progress = 1;
 
   // 도넛 차트 — Figma 338x338, stroke 8.45px, target 100%
   const sz = 338;
