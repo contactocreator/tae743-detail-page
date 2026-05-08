@@ -475,7 +475,27 @@ const Clinical02Section = () => {
       </div>
 
       {/* 3개 카드 */}
-      <img src="https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@0edac33/clinical02.gif?v=0edac33" alt="clinical02-bars" style={{ width: "100%", height: "auto", display: "block" }} />
+      {/* 3개 카드 — 정적 (final state) */}
+      <div data-anim="clinical02-bars" style={{ display: "flex", flexDirection: "column", gap: 25.35, paddingTop: 30.843 }}>
+        {items.map((it, i) => {
+          const num = it.to;
+          const barWidth = it.barTo;
+          return (
+            <div key={i} style={{ height: 227.39, padding: 38.025, background: "linear-gradient(to right, #FFFFFF 0%, rgba(255,255,255,0) 100%)", display: "flex", flexDirection: "column", gap: 21.125, boxSizing: "border-box" }}>
+              <div style={{ position: "relative", height: 117.539, width: "100%" }}>
+                <div style={{ position: "absolute", top: 35.91, left: 0, display: "flex", flexDirection: "column", gap: 4.225 }}>
+                  <div style={{ fontSize: 28.519, fontWeight: 700, color: "#14160f", lineHeight: "44.215px", whiteSpace: "nowrap" }}>{it.label}</div>
+                  <div className="mono" style={{ fontSize: 20.069, fontWeight: 400, color: "#7a8074", letterSpacing: "2.0069px", lineHeight: "31.117px", whiteSpace: "nowrap" }}>{it.sub}</div>
+                </div>
+                <div className="mono" style={{ position: "absolute", top: 0, right: 0, fontSize: 59.15, fontWeight: 600, color: "#2d4739", letterSpacing: "-1.183px", lineHeight: "91.683px", textAlign: "right" }}>{num}{it.suffix}</div>
+              </div>
+              <div style={{ height: 8.45, width: "100%", background: "#e2ddd2", position: "relative" }}>
+                <div style={{ position: "absolute", top: 0, left: 0, bottom: 0, width: `${barWidth}%`, background: "#2d4739" }} />
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 };
@@ -526,7 +546,21 @@ const Clinical03Section = () => {
       </div>
 
       {/* 도넛 카드 */}
-      <img src="https://cdn.jsdelivr.net/gh/contactocreator/tae743-detail-assets@0edac33/clinical03.gif?v=0edac33" alt="clinical03-donut" style={{ width: "100%", height: "auto", display: "block" }} />
+      <div data-anim="clinical03-donut" style={{ background: "linear-gradient(to right, #2d4739 0%, #6ead8b 100%)", border: "2.112px solid #e2ddd2", padding: "75.204px 35.912px 44.362px", display: "flex", gap: 50.7, alignItems: "center", boxSizing: "border-box" }}>
+        <svg width={sz} height={sz} viewBox={`0 0 ${sz} ${sz}`} style={{ flexShrink: 0 }}>
+          <circle cx={sz / 2} cy={sz / 2} r={r} fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth={stroke} />
+          <circle cx={sz / 2} cy={sz / 2} r={r} fill="none" stroke="#FFFFFF" strokeWidth={stroke} strokeDasharray={c} strokeDashoffset={c * (1 - filled)} transform={`rotate(-90 ${sz / 2} ${sz / 2})`} strokeLinecap="round" />
+          <text x={sz / 2} y={sz / 2 + 6} textAnchor="middle" fontSize="54.92" fontWeight="700" fill="#FFFFFF" fontFamily="'Inter', sans-serif">{Math.round(filled * 100)}%</text>
+          <text x={sz / 2} y={sz / 2 + 42} textAnchor="middle" fontSize="19.01" fontWeight="400" fill="#FFFFFF" fontFamily="'Inter', sans-serif">DRY SKIN</text>
+        </svg>
+        <div style={{ width: 372.856, height: 140.777, position: "relative" }}>
+          <div style={{ position: "absolute", top: -1.13, left: 0 }}>
+            <p style={{ margin: 0, fontSize: 28.519, fontWeight: 700, color: "#FFFFFF", lineHeight: "44.215px" }}>{`건조하고 예민한 피부 `}</p>
+            <p style={{ margin: 0, fontSize: 28.519, fontWeight: 700, color: "#FFFFFF", lineHeight: "44.215px" }}>실험자 비율</p>
+          </div>
+          <div className="mono" style={{ position: "absolute", top: 105.31, left: 0, fontSize: 22.181, fontWeight: 400, color: "#FFFFFF", letterSpacing: "0.8872px", lineHeight: "35.49px", whiteSpace: "nowrap" }}>N=25 / DRY SKIN / 2 WEEKS</div>
+        </div>
+      </div>
     </section>
   );
 };
